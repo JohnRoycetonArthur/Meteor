@@ -5,14 +5,20 @@ if (Meteor.isClient) {
   Template.hello.helpers({
     counter: function () {
       return Session.get('counter');
-    }
+    },
+	test: function () {
+		return "Hi Test"
+	}
   });
 
   Template.hello.events({
     'click button': function () {
       // increment the counter when button is clicked
       Session.set('counter', Session.get('counter') + 1);
-    }
+    },
+	'click #test': function () {
+		alert("clicked")
+	}
   });
 }
 
